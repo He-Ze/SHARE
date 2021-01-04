@@ -38,6 +38,20 @@ Page({
         console.log("调用失败");
       }
     })
+
+    wx.cloud.callFunction({
+      name: 'downloadlogin',
+      data:{
+        usrid:3
+      },
+      success(res){
+        console.log("nice\n");
+        console.log(res)
+      },
+      fail(err){
+        console.log("调用失败");
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面加载
