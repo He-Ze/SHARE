@@ -28,7 +28,21 @@ Page({
       data:{
         usrname:'周思宇3++++号',
         usrid:3,
-        usrhead:"不会吧还要改"
+        usrhead:"喵喵喵"
+      },
+      success(res){
+        console.log("nice\n");
+        console.log(res)
+      },
+      fail(err){
+        console.log("调用失败");
+      }
+    })
+
+    wx.cloud.callFunction({
+      name: 'downloadlogin',
+      data:{
+        usrid:3
       },
       success(res){
         console.log("nice\n");
