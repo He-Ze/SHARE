@@ -26,9 +26,9 @@ Page({
     wx.cloud.callFunction({
       name: 'login',
       data:{
-        usrname:'周思宇3号',
+        usrname:'周思宇3++++号',
         usrid:3,
-        usrhead:"想头好烦啊"
+        usrhead:"不会吧还要改"
       },
       success(res){
         console.log("nice\n");

@@ -20,11 +20,13 @@ exports.main = async (event, context) => {  //参数隐藏在data里面，这里
   }).get(); //得到用户数据的计数。
 
   tempdata.then(res=>{
-    console.log("aksjdflasjdf");
+    console.log(res);
     if(res.data.length != 0)  //如果已经存在这个用户数据了，那么就继续执行。
   {
     let temp_id = res.data[0]['_id']; //得到我们想要的id值。
-    DB.doc(temp_id).updata({
+    console.log(temp_id);
+    console.log(usrname);
+    DB.doc(temp_id).update({
       data:{
         usrhead : usrhead,  //更改用户头像所在地址。
         usrname : usrname  //更新用户名字。  主要考虑到用户可能会经常改微信昵称。
@@ -40,6 +42,6 @@ exports.main = async (event, context) => {  //参数隐藏在data里面，这里
         usrname : usrname  //用户的姓名。
       }
     });
-  }})
+  }});
   return true;
 }
