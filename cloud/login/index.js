@@ -33,11 +33,11 @@ exports.main = async (event, context) => {  //参数隐藏在data里面，这里
         usrname : usrname  //更新用户名字。  主要考虑到用户可能会经常改微信昵称。
       }
     });
-    const deleteresult = await cloud.deleteFile({ //删除旧的照片。
+    /*const deleteresult = await cloud.deleteFile({ //删除旧的照片。
       fileList: [oldfile],  //删除列表必须是一个列表而不是一个string，之前错了。
     });
     console.log('删除结果');
-    console.log(deleteresult);
+    console.log(deleteresult);*/
   }
   else  //如果这个用户没有注册在案，我们需要给这个用户进行注册。
   {
