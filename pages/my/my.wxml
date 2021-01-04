@@ -1,0 +1,11 @@
+<view class="container">
+  <view class="fabu_items" wx:for='{{dataLists}}' wx:key='_id'>  <!--这个key好像就是一个索引之类的，key已经不需要双大括号了-->
+    <text>{{item.text}}</text>
+    <view class="image_items">
+      <image wx:for='{{item.fileIDs}}' wx:for-item='fileid' wx:keitemy='{{fileid}}' src="{{fileid}}" mode="aspectFill"></image>
+      <!--作者疯狂改名给我整蒙了，实际上这个src就是文件名-->
+    </view>
+    <view>{{item.time}}</view>  <!--item好像是引用自己的意思-->
+  </view>
+  <text wx:if='{{dataLists.length==0}}'>还没有发布过，赶快去发布你的第一条动态吧...</text>
+</view>
