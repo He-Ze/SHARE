@@ -19,6 +19,7 @@ exports.main = async (event, context) => {
       fileIDs: fileIDs,
       time: time,
       createtime: db.serverDate(),
+      likes: 0
     }
   })
 }
