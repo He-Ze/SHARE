@@ -13,6 +13,7 @@ Page({
       name: 'getData',
       data:{
         name:'mytest', //这里我要使用test用于集合。
+        mode:2
       },
       success(res){
         that.setData({
@@ -23,7 +24,7 @@ Page({
     })
 
     /////////////////////下面这一段真的是我乱测试的。
-    wx.cloud.callFunction({
+    /*wx.cloud.callFunction({
       name: 'login',
       data:{
         usrname:'周思宇3++++号',
@@ -51,7 +52,7 @@ Page({
       fail(err){
         console.log("调用失败");
       }
-    })
+    })*/
   },
   /**
    * 生命周期函数--监听页面加载

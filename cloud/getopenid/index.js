@@ -5,7 +5,7 @@ cloud.init()
 
 // 云函数入口函数
 exports.main = async (event, context) => {  //参数隐藏在data里面，这里官方文档有。
-  let data = cloud.getWXContext();
+  let data = await cloud.getWXContext();
   console.log(data);
   return data;
 }
