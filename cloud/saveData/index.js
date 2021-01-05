@@ -19,7 +19,16 @@ exports.main = async (event, context) => {
       fileIDs: fileIDs,
       time: time,
       createtime: db.serverDate(),
-      likes: 0
+      likes: 0  //如果喜欢为0的话到时候我们就不用怕重复点赞了。
     }
+  }).then(res=>{
+    DB = db.collection('like'); //谁喜欢这个数据就可以点赞。
+    DB.add({
+      data:{
+        inforid:res._id,  //就是该条言论在mytest集合里面的唯一标识。
+        wholike:[]
+      }
+    })
   })
+  return true;
 }
