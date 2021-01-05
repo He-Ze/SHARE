@@ -1,7 +1,13 @@
 <view class="container">
   <view class="fabu_items" wx:for='{{dataLists}}' wx:key='_id'>  <!--这个key好像就是一个索引之类的，key已经不需要双大括号了-->
+    <view class='userinfo-avatar'>
+    <image src="{{item.usrinfor[0].usrhead}}"
+ mode="cover"></image>
+    <text>{{item.usrinfor[0].usrname}}</text>
+    </view>
     <text>{{item.text}}</text>
     <view class="image_items">
+
       <image wx:for='{{item.fileIDs}}' wx:for-item='fileid' wx:keitemy='{{fileid}}' src="{{fileid}}" mode="aspectFill"></image>
       <!--作者疯狂改名给我整蒙了，实际上这个src就是文件名-->
     </view>

@@ -11,3 +11,4 @@
   </view>
   <button type="primary" bindtap="saveData">发表</button>
 </view>
+<button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>

@@ -15,3 +15,17 @@
   height: 222rpx;
   margin-right: 0.3%;
 }
+
+.userinfo-avatar{
+  width: 100%;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+/**头像显示设置**/
+.userinfo-avatar image{
+  width: 80rpx;
+  height: 80rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
