@@ -19,7 +19,7 @@ Page({
         that.setData({
           dataLists: res.result.list  //这个要用list,另外一个用data也就是get需要用data。
         });
-        //console.log(res.result.list[0]["_id"]);
+        console.log(res.result.list);
       }
     })
 

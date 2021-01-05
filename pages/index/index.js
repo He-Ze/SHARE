@@ -9,6 +9,8 @@ Page({
     text: '',
     imageLists: [],
     userInfo:null,
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    hasUserInfo: false,
   },
   userDetail:1,
   /*data: {
@@ -24,9 +26,9 @@ Page({
       },
       success:res1=>{ //等待程序全部完成。也就是完全得到结果。
         this.userDetail = res1;
-        wx.getSetting({
-          success (res){
-            if (res.authSetting['scope.userInfo']) {
+        /*wx.getSetting({
+          success: res2 =>{
+            if (res2.authSetting['scope.userInfo']) {
               // 已经授权，可以直接调用 getUserInfo 获取头像昵称
               wx.getUserInfo({
                 success: function(res) {
@@ -44,16 +46,16 @@ Page({
                     }
                   })
                 }
-              })
+              });
             }
           }
-        })
+        })*/
       }
     })
   },
-  /*bindGetUserInfo (e) {
+  bindGetUserInfo (e) {
     console.log(e.detail.userInfo)
-  },*/
+  },
 
   fabu_text(e){
     this.setData({
@@ -128,5 +130,23 @@ Page({
         console.log("调用失败");
       }
     })
+  },
+
+  getUserInfo: function(e) {
+    console.log(e)
+    this.userInfo = e.detail.userInfo
+    this.setData({
+      //userInfo: e.detail.userInfo,
+      hasUserInfo: true
+    });
+    console.log(this.userInfo);
+    wx.cloud.callFunction({ //调用我自己写的云函数并且得到openid。
+      name: 'login',
+      data:{
+        usrhead:this.userInfo.avatarUrl,
+        usrname:this.userInfo.nickName,
+        usrid:this.userDetail.result.OPENID,
+      },
+    });
   }
 })

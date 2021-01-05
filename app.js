@@ -3,7 +3,7 @@ App({
   onLaunch: async function () {
     wx.cloud.init({
       env: "zhousy26-6gz0ynbwb24e8f54"
-    }),
+    })
 
 
     /*await wx.cloud.callFunction({ //调用我自己写的云函数并且得到openid。

@@ -29,6 +29,7 @@
     "packNpmRelationList": [],
     "minifyWXSS": true
   },
+  "appid": "wx97dc94474e7a6914",
   "compileType": "miniprogram",
   "libVersion": "2.11.3",
   "projectname": "yunProgress4",

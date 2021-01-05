@@ -21,8 +21,12 @@ exports.main = async (event, context) => {  //参数隐藏在data里面，这里
     test = cloud.database().collection(name).aggregate().sort({ //考虑到一些问题，我们返回的时候应该是按时间从新往旧排列。
       like: -1,
       createtime: -1
+    }).lookup({
+      from: 'usr',
+      localField: 'usrid',
+      foreignField: 'usrid',
+      as: 'usrinfor',
     }).end();
-    console.log("mode29999999999999");
   }
   else
   {
