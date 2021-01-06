@@ -20,12 +20,33 @@
   width: 100%;
   margin-top: 20rpx;
   margin-bottom: 20rpx;
+  display:flex;
+	flex-direction:row;
+	align-items:center;
 }
 
 /**头像显示设置**/
 .userinfo-avatar image{
   width: 80rpx;
   height: 80rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+/**点赞设置**/
+.like{
+  width: 100%;
+  flex-direction: row;
+  /**margin-top: 20rpx;
+  margin-bottom: 20rpx;**/
+  align-items: center;
+  display: flex;
+}
+
+/**点赞图片**/
+.like image{
+  width: 60rpx;
+  height: 60rpx;
   margin: 20rpx;
   border-radius: 50%;
 }
