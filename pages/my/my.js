@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    dataLists: []
+    dataLists: [],
+    mode:1,
   },
   getData(){
     let that = this;
@@ -14,7 +15,7 @@ Page({
       name: 'getData',
       data:{
         name:'mytest', //这里我要使用test用于集合。
-        mode:2
+        mode:that.data.mode,
       },
       success(res){
         that.setData({
@@ -79,6 +80,14 @@ Page({
       }
       }
     })
+  },
+
+  changemode:function(e){
+    this.setData({
+      mode:e.currentTarget.dataset.mode,
+    });
+    console.log(this.data.mode);
+    this.getData();
   },
   /**
    * 生命周期函数--监听页面加载

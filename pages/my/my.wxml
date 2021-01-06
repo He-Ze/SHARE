@@ -1,4 +1,6 @@
 <view class="container">
+  <button type="primary" bindtap="changemode" data-mode='1'>时间倒序</button>
+  <button type="primary" bindtap="changemode" data-mode='2'>点赞排序</button>
   <view class="fabu_items" wx:for='{{dataLists}}' wx:key='_id' wx:for-index='index'>  <!--这个key好像就是一个索引之类的，key已经不需要双大括号了-->
     <view class='userinfo-avatar'>
     <image src="{{item.usrinfor[0].usrhead}}"
