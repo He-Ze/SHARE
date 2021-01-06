@@ -1,4 +1,5 @@
 // pages/my/my.js
+var Getdata = require('../index/index.js');
 Page({
 
   /**
@@ -54,6 +55,31 @@ Page({
       }
     })*/
   },
+
+  //一个尝试点赞的条件。
+  thumbsup: function(e){
+    var temp = e.currentTarget.dataset.like + 1;
+    let that = this;
+    wx.cloud.callFunction({
+      name: 'likeit',
+      data:{
+        id : e.currentTarget.dataset.id,
+        //usrid : Getdata.userDetail,
+      },
+      success(res){
+        console.log("调用likeit成功");
+        console.log(res);
+        if(res.result == true)
+        {
+        var temp1 = that.data.dataLists;
+        temp1[e.currentTarget.dataset.index].likes = temp;
+        that.setData({
+          dataLists:temp1
+        });
+      }
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -108,5 +134,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
 })

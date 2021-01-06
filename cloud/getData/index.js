@@ -1,7 +1,9 @@
 // 云函数入口文件
 const cloud = require('wx-server-sdk')
 
-cloud.init()
+cloud.init({
+  env: "zhousy26-6gz0ynbwb24e8f54"
+})
 
 // 云函数入口函数
 exports.main = async (event, context) => {  //参数隐藏在data里面，这里官方文档有。
@@ -9,6 +11,7 @@ exports.main = async (event, context) => {  //参数隐藏在data里面，这里
   let mode = event.mode;
   let test = null;
   console.log(mode);
+  console.log(name);
   if(mode == 1)
   {
     test = cloud.database().collection(name).aggregate().sort({ //考虑到一些问题，我们返回的时候应该是按时间从新往旧排列。
@@ -18,7 +21,7 @@ exports.main = async (event, context) => {  //参数隐藏在data里面，这里
   }
   else if(mode == 2)
   {
-    test = cloud.database().collection(name).aggregate().sort({ //考虑到一些问题，我们返回的时候应该是按时间从新往旧排列。
+    test = await cloud.database().collection(name).aggregate().sort({ //考虑到一些问题，我们返回的时候应该是按时间从新往旧排列。
       like: -1,
       createtime: -1
     }).lookup({
