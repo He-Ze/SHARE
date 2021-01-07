@@ -2,10 +2,10 @@
   margin: 40rpx;
 }
 .container button{
-  display: block;
+  display: ruby-base;
   margin-top: 2vh;
-  font-size: 3.5vh;
-  width: 40vw;
+  font-size: 2vh;
+  width: 48%;
 }
 .fabu_items{
   border-bottom: 1rpx solid black;
@@ -17,8 +17,8 @@
   margin-bottom: 20rpx;
 }
 .image_items image{
-  width: 33%;
-  height: 222rpx;
+  width: 70%;
+  height: 400rpx;
   margin-right: 0.3%;
 }
 
