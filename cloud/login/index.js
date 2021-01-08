@@ -2,7 +2,7 @@
 const cloud = require('wx-server-sdk')
 
 cloud.init({
-  env: "xxxxxxxxx"
+  env: "hello-world-6g4iksa825a9d027"
 })
 
 //云函数的返回值有玄妙，我真是操了。

@@ -2,7 +2,7 @@
 const cloud = require('wx-server-sdk')
 
 cloud.init({
-  env: "xxxxxxxxx"
+  env: "hello-world-6g4iksa825a9d027"
 })
 
 // 云函数入口函数
@@ -14,6 +14,7 @@ exports.main = async (event, context) => {  //参数隐藏在data里面，这里
   console.log(event);
   return await db.collection('mytest').where({
     _id: _.eq(_id),
+    //wholike: _.not(_.all([usrid])), 
   }).update({
     data: {
       likes: _.inc(1), //点赞成功就自增1。
